@@ -1,0 +1,14 @@
+input manager - bind the controls for each player
+player movement - moves the player -> gets controls from input manager
+throwing - throws the players ball
+picking up ball - lets the player pick up a ball if they dont have one
+respawner - respawns the player
+
+
+Menu/UI
+Options (if we want it)
+Start screen
+	Num of players
+Game Over
+
+Scoring/Timer
