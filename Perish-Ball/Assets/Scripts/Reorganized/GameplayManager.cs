@@ -8,16 +8,13 @@ using UnityEngine.SceneManagement;
  */
 public class GameplayManager : MonoBehaviour
 {
+    //Variables
     private int[] scores;
     public GameObject[] players;
     private GameObject blueText;
 	private GameObject redText;
 	private GameObject timeText;
-
     public GameObject gameOver;
-
-
-
     private float totalTime;
     private float currentTime;
     private float scoreTime;
@@ -38,14 +35,19 @@ public class GameplayManager : MonoBehaviour
         currentTime += Time.deltaTime;
         scoreTime = totalTime - currentTime;
 
+        //Get all scores
         for (int i = 0; i < scores.Length; i++)
         {
             scores[i] = players[i].GetComponent<Player>().GetScore();
         }
+
+        //Update GUI text
         timeText.GetComponent<Text>().text = "Time\n" + (Mathf.Round(scoreTime));
 		blueText.GetComponent<Text>().text = (scores[0]).ToString();
 		redText.GetComponent<Text>().text = (scores[1]).ToString();
 
+
+        //Detect if it was a tie or who won
         if (scoreTime < 0 && gameOver.activeSelf == false)
         {
             gameOver.SetActive(true);

@@ -9,23 +9,21 @@ using UnityEngine;
  */
 public class Ball : MonoBehaviour {
 
+    //Variables
     public Vector3 throwVector;
     public int forcethrow = 10;
 
     Rigidbody ballRB;
 	bool thrown = false;
-
-	private GameObject thrower;
+    int playID = 0;
 	private int totalDistance;
 	private Vector3 startThrowPos;
 
+    //References
+    private GameObject thrower;
     public Material mat1; //In Flight material
     public Material mat2; //PickUp material
     public Material mat3; //Inflight material
-
-
-
-    int playID = 0;
                           // Use this for initialization
     void Start () {
 		totalDistance = 0;
@@ -34,7 +32,6 @@ public class Ball : MonoBehaviour {
 		thrower = GameObject.Find ("Player_Prefab");
     }
 	
-	// Update is called once per frame
 	void Update () {
 
 		if (gameObject.GetComponent<Rigidbody> ().velocity.sqrMagnitude <= new Vector3 (5.0f, 0.0f, 0.0f).sqrMagnitude) {
@@ -78,8 +75,6 @@ public class Ball : MonoBehaviour {
     {
 		startThrowPos = this.gameObject.transform.position;
 		totalDistance = 0;
-        //ballRB.AddForce(throwVector * forcethrow, ForceMode.Impulse);
-        //ballRB.AddRelativeForce(throwVector * forcethrow, ForceMode.Impulse);
         ballRB.velocity = throwVector * forcethrow;
 		thrown = true;
         playID = playerID;

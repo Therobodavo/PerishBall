@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     float rotation; //rotation in degrees of the player
     float moveAmount = 10.0f; //controls how fast the player can move
     float rotAmount = 0.15f; // percent of difference between current and desired look to rotate by per frame
-   public bool isDead = false;
+    public bool isDead = false;
     public float deadTimer; //Timer counting how long a player remians dead
     public float invTimer; //Timer for invisbility frames
     public Material mat1; //Defult material

@@ -7,12 +7,12 @@ using UnityEngine;
  */
 public class SpawnManager : MonoBehaviour
 {
-
+    //Variables/References
     GameObject[] SpawnPoints; // all spawn objecs
     GameObject[] Players; // players
     public int respawnTime = 6; //how long it takes for player to respawn
     Transform transfrom;
-    // Use this for initialization
+
     void Start()
     {
         SpawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
@@ -21,9 +21,9 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Checks if dead and spawn points
         foreach (GameObject player in Players)
         {
             if (player.GetComponent<Player>().deadTimer > (respawnTime * Time.deltaTime))

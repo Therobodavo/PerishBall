@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Throwing : MonoBehaviour {
 
+    //Variables/References
     public GameObject ball;
     Rigidbody ballRB;
     public GameObject hoverPoint;
